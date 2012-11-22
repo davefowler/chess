@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="underscore.js" type="text/javascript"></script>
+<script type="text/javascript" src="chessjs/chess.js"></script>
+<script type="text/javascript" src="ai.js"></script>
+<script type="text/javascript" src="game.js"></script>
+
+<link href="game.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="stats">
+    <ul>
+        <li><span class="option-title">Turn</span> - <span id="turn"></span></li>
+		<li><button type='button' id="undo-button">Undo</button></li>
+		<li><span class="option-title">Dead</span>
+		  <ul id="dead"></ul>
+		</li>
+		<li><span class="option-title">Moves</span>
+		    <ul id="moves">
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div id="board"></div>
+
+<script type="text/javascript">
+  chess.render();
+
+  $('#undo-button').live('click', function() {
+      chess.undo();
+      chess.undo();  // Undo twice to be fair to other player
+      chess.render();
+  });
+</script>
+
+
+
+</body>
+</html>

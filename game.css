@@ -1,0 +1,67 @@
+
+
+body {
+  margin-top: 40px;
+}
+
+#stats {
+  margin: 20px;
+  width: 300px;
+  float: left;
+}
+
+#stats ul li {
+   list-style: none;
+   padding: 10px;
+}
+
+#stats ul ul {
+   padding: 0px;
+   margin-top: 10px;
+}
+
+#stats ul ul li {
+    padding: 0px;
+}
+
+#stats ul li .option-title {
+   font-weight: bold;
+}
+
+
+
+#board {
+   width:400px;
+   float: left;
+}
+
+
+.dark {
+   background-color: #999;
+}
+
+.light {
+   background-color: #eee;
+}
+
+#board table {
+    font-size: 36px;
+    width: 400px;
+    height: 400px;
+    align: center;
+    text-align: center;
+	margin: 0px;
+    border: 0px;
+    border-spacing: 0px;
+}
+
+#board table tr td {
+    height: 12.5%;
+	width: 12.5%;
+}
+
+td.hover {
+   background-color: lightblue;
+}
+
+
