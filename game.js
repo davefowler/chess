@@ -81,7 +81,7 @@ chess.renderBoard = function (node) {
 		drop: function(event, ui) {
 			var piece = ui.draggable;
 			var origional_square = $(piece).parent().data('square');
-			chess.move({from: origional_square, to: $(this).data('square')});
+			chess.move({from: origional_square, to: $(this).data('square'), promotion: $('#promotion option:selected').val() });
 			chess.render(node);
 		},
 	});
@@ -117,7 +117,7 @@ chess.render = function() {
 		);
 	}
 
-	if (chess.turn() == 'b') {
+	if (chess.turn() == 'b' && $('#vs option:selected').val() == 'computer') {
 		setTimeout(function() {
 			var move = alphaBeta(chess, 1, alpha, beta);
 			chess.move(move);
