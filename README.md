@@ -7,3 +7,5 @@ The AI uses AlphaBeta algorithm which is a shortcut version of minmax.  It has a
 Read more about it on [my blog](http://thingsilearned.com/2012/11/22/javascript-chess-game/) or [try it out here](http://htmlpreview.github.com/?https://raw.github.com/davefowler/chess/master/index.html).
 
 This project is free as in beer.
+
+![Javascript Chess](http://thingsilearned.files.wordpress.com/2012/11/screen-shot-2012-11-22-at-4-15-41-am.png?w=545&h=400)
