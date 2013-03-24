@@ -119,7 +119,7 @@ chess.render = function() {
 
 	if (chess.turn() == 'b' && $('#vs option:selected').val() == 'computer') {
 		setTimeout(function() {
-			var move = alphaBeta(chess, 1, alpha, beta);
+			var move = startAlphaBeta(chess, 1);
 			chess.move(move);
 			chess.render();
 			}, 0);
