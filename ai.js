@@ -40,6 +40,9 @@ function score(chess) {
 	_.each(tally, function(val, p) {
 		s = s + val*RANK[p];		
 	});
+	if (chess.in_checkmate()){
+		return 9998;//last player to make move won
+	}
 	return s * turn;
 }
 
