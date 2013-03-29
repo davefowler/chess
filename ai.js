@@ -40,9 +40,6 @@ function score(chess) {
 	_.each(tally, function(val, p) {
 		s = s + val*RANK[p];		
 	});
-	if (chess.in_checkmate()){
-		return 9998;//last player to make move won
-	}
 	return s * turn;
 }
 
@@ -59,12 +56,16 @@ function startAlphaBeta(tchess, depth)
 		var tempchess = new Chess(tchess.fen());
 		tempchess.move(moves[index]);
 		var move_score;
-		if (depth == 0)
-		{
-			move_score = score(tempchess);
-		}
-		else {
-			move_score = -alphaBeta(tempchess, depth-1);
+		if (tempchess.in_checkmate()){
+			move_score = 9998;//last player to make move won
+		} else{
+			if (depth == 0)
+			{
+				move_score = score(tempchess);
+			}
+			else {
+				move_score = -alphaBeta(tempchess, depth-1);
+			}
 		}
 		if (move_score > best_score){
 			best_score = move_score;
@@ -82,12 +83,16 @@ function alphaBeta(tchess,depth)
 		var tempchess = new Chess(tchess.fen());
 		tempchess.move(moves[index]);
 		var move_score;
-		if (depth == 0)
-		{
-			move_score = score(tempchess);
-		}
-		else {
-			move_score = -alphaBeta(tempchess, depth-1);
+		if (tempchess.in_checkmate()){
+			move_score = 9998;//last player to make move won
+		} else{
+			if (depth == 0)
+			{
+				move_score = score(tempchess);
+			}
+			else {
+				move_score = -alphaBeta(tempchess, depth-1);
+			}
 		}
 		if (move_score > best_score){
 			best_score = move_score;
